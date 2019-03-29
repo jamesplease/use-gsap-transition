@@ -1,0 +1,33 @@
+{
+  "name": "use-gsap-transition",
+  "version": "0.0.1",
+  "description": "Declarative React transitions using GSAP",
+  "main": "src/use-gsap-transition.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesplease/use-gsap-transition.git"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "hook",
+    "greensock",
+    "gsap",
+    "transition",
+    "animation",
+    "declarative",
+    "timeline",
+    "performance",
+    "performant",
+    "timeline"
+  ],
+  "author": "James Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesplease/use-gsap-transition/issues"
+  },
+  "homepage": "https://github.com/jamesplease/use-gsap-transition#readme"
+}
