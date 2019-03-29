@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import usePrevious from './use-previous';
 import shallowEquals from '../utils/shallow-equals';
-// import warning from '../utils/warning';
 
 export default function useTimelineTransitions(elTransitions, state) {
   const resultRef = useRef();
