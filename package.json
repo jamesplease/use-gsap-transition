@@ -1,6 +1,6 @@
 {
   "name": "use-gsap-transition",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Declarative React transitions using GSAP",
   "main": "src/use-gsap-transition.js",
   "scripts": {
