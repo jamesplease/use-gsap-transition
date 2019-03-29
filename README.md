@@ -18,15 +18,17 @@ and CSS Animations. And it can be tedious to program this behavior imperatively 
 
 Enter `useGsapTransition`. With this [hook](https://reactjs.org/docs/hooks-intro.html), you define
 visual states for your Components _declaratively_, as well as transitions between those states. The
-hook handles the rest, ensuring that your visual state transitions behave as you would expect and are performant.
+hook handles the rest, creating and managing the transitions between visual states for you.
 
 ### Caveats
 
-- Physics-based transforms and transformations are not a priority of this library
+- Physics-based transitions are not a priority of this library
 - This was developed for use in prototypes, rather than production applications
-- The documentation needs work!
+- The documentation is a work in progress
 
 ## Installation
+
+The preferred method for installing `useGsapTransition` is through [npm](https://www.npmjs.com/).
 
 ```
 npm install use-gsap-transition
