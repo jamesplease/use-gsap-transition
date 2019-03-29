@@ -28,10 +28,16 @@ hook handles the rest, creating and managing the transitions between visual stat
 
 ## Installation
 
-The preferred method for installing `useGsapTransition` is through [npm](https://www.npmjs.com/).
+Install using [npm](https://www.npmjs.com):
 
 ```
 npm install use-gsap-transition
+```
+
+or [yarn](https://yarnpkg.com/):
+
+```
+yarn add use-gsap-transition
 ```
 
 ## Concepts
