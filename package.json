@@ -29,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/jamesplease/use-gsap-transition/issues"
   },
-  "homepage": "https://github.com/jamesplease/use-gsap-transition#readme"
+  "homepage": "https://github.com/jamesplease/use-gsap-transition#readme",
+  "peerDependencies": {
+    "gsap": "^2.1.0",
+    "react": "^16.8.0"
+  }
 }
