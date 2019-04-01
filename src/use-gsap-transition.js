@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import useTimelineTransitions from './hooks/use-timeline-transitions';
 import useGsapTimeline from './hooks/use-gsap-timeline';
-import styleFromTo from './utils/style-from-to';
+import styleFromTransition from './utils/style-from-transition';
 
 export default function useGsapTransition({
   // A reference to the parent node for all of the `elTransitions`
@@ -79,7 +79,7 @@ export default function useGsapTransition({
         transitionToUse = transition;
       }
 
-      const style = styleFromTo(transitionToUse.to, indexToUse);
+      const style = styleFromTransition(transitionToUse, indexToUse);
 
       let classNameToUse = '';
       if (selector !== 'root') {
