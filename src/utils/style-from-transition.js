@@ -16,7 +16,7 @@ const distanceAttrs = [
   'y',
 ];
 
-export default function styleFromTo(to = {}, index) {
+function styleFromTo(to = {}, index) {
   const result = {};
 
   const toIsFunction = typeof to === 'function';
@@ -97,7 +97,6 @@ export default function styleFromTo(to = {}, index) {
     }
   });
 
-  // NOTE: update this to support other values!
   distanceAttrs.forEach(attrName => {
     if (!isNil(toToUse[attrName])) {
       const attrValue = toToUse[attrName];
@@ -122,4 +121,36 @@ export default function styleFromTo(to = {}, index) {
   }
 
   return result;
+}
+
+export default function styleFromTransition(transition, index) {
+  if (Array.isArray(transition)) {
+    return (
+      transition
+        .map(t => {
+          const duration = typeof t.duration === 'undefined' ? 0 : t.duration;
+          const startTime =
+            typeof t.startTime === 'undefined' ? 0 : t.startTime;
+          const endTime = startTime + duration;
+
+          return {
+            ...t,
+            endTime,
+          };
+        })
+        // Sort endTime ascending, so that the last transition
+        // has its styles applied over top of earlier transitions
+        .sort((a, b) => {
+          return a.endTime - b.endTime;
+        })
+        .reduce((result, t) => {
+          return {
+            ...result,
+            ...styleFromTo(t.to),
+          };
+        }, {})
+    );
+  } else {
+    return styleFromTo(transition.to, index);
+  }
 }
