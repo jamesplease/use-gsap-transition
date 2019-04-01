@@ -53,7 +53,7 @@ function generateTimeline({ timelineTransitions, el, defaultDuration = 0 }) {
   childrenEls.forEach(child => {
     child.nodes.forEach((childEl, index) => {
       let transitionToUse;
-      if (typeof transition === 'function') {
+      if (typeof child.transition === 'function') {
         transitionToUse = child.transition(index);
       } else {
         transitionToUse = child.transition;
