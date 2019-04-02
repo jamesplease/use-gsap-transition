@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.6 (April 2nd, 2019)
+
+- This release fixes a race condition bug in `getPropsForSelector`.
+
 ### 0.0.5 (April 1st, 2019)
 
 - This release fixes an additional bug that was introduced in 0.0.3.
