@@ -28,10 +28,6 @@ export default function useGsapTransition({
   const [prevTimelineTransitions, setPrevTimelineTransitions] = useState(
     timelineTransitions
   );
-  const prevTimelineTransitionsRef = useRef();
-  useEffect(() => {
-    prevTimelineTransitionsRef.current = prevTimelineTransitions;
-  }, [prevTimelineTransitions]);
 
   // This hook actually performs the transitions whenever the `timelineTransitions` changes.
   useGsapTimeline({
@@ -69,7 +65,7 @@ export default function useGsapTransition({
       propsToUse = propsToUse || {};
       const { className = '', ...rest } = propsToUse;
 
-      const elTransitions = prevTimelineTransitionsRef.current || {};
+      const elTransitions = prevTimelineTransitions || {};
       const transition = elTransitions[selector] || {};
 
       let transitionToUse;
