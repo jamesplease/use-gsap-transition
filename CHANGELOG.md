@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.7 (April 4th, 2019)
+
+- Improved support for transitioning `color` and `display`.
+
 ### 0.0.6 (April 2nd, 2019)
 
 - This release fixes a race condition bug in `getPropsForSelector`.
