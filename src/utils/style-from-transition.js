@@ -4,7 +4,7 @@ function isNil(val) {
   return typeof val === 'undefined' || val === null;
 }
 
-const scalarAttrs = ['opacity', 'pointerEvents', 'z', 'transformOrigin'];
+const scalarAttrs = ['opacity', 'pointerEvents', 'z', 'transformOrigin', 'color', 'display'];
 const distanceAttrs = [
   'left',
   'right',
