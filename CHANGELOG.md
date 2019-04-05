@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.0.8 (April 5th, 2019)
+
+- Improved negative and non-integer numbers when computing styles.
+- Improved support for `z-index` transitions.
+
 ### 0.0.7 (April 4th, 2019)
 
 - Improved support for transitioning `color` and `display`.
