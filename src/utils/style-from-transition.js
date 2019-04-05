@@ -4,7 +4,7 @@ function isNil(val) {
   return typeof val === 'undefined' || val === null;
 }
 
-const scalarAttrs = ['opacity', 'pointerEvents', 'z', 'transformOrigin', 'color', 'display'];
+const scalarAttrs = ['opacity', 'pointerEvents', 'zIndex', 'transformOrigin', 'color', 'display'];
 const distanceAttrs = [
   'left',
   'right',
@@ -107,7 +107,7 @@ function styleFromTo(to = {}, index) {
         value = attrValue;
         unit = 'px';
       } else if (typeof attrValue === 'string') {
-        const split = attrValue.split(/(\d+)/);
+        const split = attrValue.split(/([-\d\.]+)/);
         value = split[1];
         unit = split[2];
       }
