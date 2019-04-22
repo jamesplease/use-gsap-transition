@@ -65,14 +65,35 @@ export default function useGsapTransition({
       propsToUse = propsToUse || {};
       const { className = '', ...rest } = propsToUse;
 
-      const elTransitions = prevTimelineTransitions || {};
-      const transition = elTransitions[selector] || {};
+      const currentElTransitions = timelineTransitions || {};
+      const currentTransition = currentElTransitions[selector] || {};
+
+      let currentTransitionToUse;
+      if (typeof currentTransition === 'function') {
+        currentTransitionToUse = currentTransition(indexToUse);
+      } else {
+        currentTransitionToUse = currentTransition;
+      }
 
       let transitionToUse;
-      if (typeof transition === 'function') {
-        transitionToUse = transition(indexToUse);
+
+      const notTransitioning =
+        typeof currentTransition.animate !== 'undefined' &&
+        !currentTransition.animate;
+      if (!notTransitioning) {
+        const prevElTransitions = prevTimelineTransitions || {};
+        const prevTransition = prevElTransitions[selector] || {};
+
+        let prevTransitionToUse;
+        if (typeof prevTransition === 'function') {
+          prevTransitionToUse = prevTransition(indexToUse);
+        } else {
+          prevTransitionToUse = prevTransition;
+        }
+
+        transitionToUse = prevTransitionToUse;
       } else {
-        transitionToUse = transition;
+        transitionToUse = currentTransitionToUse;
       }
 
       const style = styleFromTransition(transitionToUse, indexToUse);
