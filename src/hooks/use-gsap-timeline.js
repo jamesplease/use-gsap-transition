@@ -45,6 +45,12 @@ function generateTimeline({ timelineTransitions, el, defaultDuration = 0 }) {
         ? 0
         : transitionToUse.startTime;
 
+    const shouldTransition = typeof transitionToUse.transition === 'undefined' ? true : transitionToUse.transition;
+
+    if (!shouldTransition) {
+      return;
+    }
+
     // We must clone the toDefinition here because GSAP mutates the value
     const tween = TweenMax.to(childEl, durationToUse, { ...toDefinition });
     timeline.add(tween, startTimeToUse);
@@ -60,7 +66,7 @@ function generateTimeline({ timelineTransitions, el, defaultDuration = 0 }) {
       }
 
       if (process.env.NODE_ENV !== 'production') {
-        const validKeys = ['duration', 'to', 'startTime'];
+        const validKeys = ['duration', 'to', 'startTime', 'transition'];
 
         function validateTransition(transitionToValidate) {
           const computedKeys = Object.keys(transitionToValidate);
