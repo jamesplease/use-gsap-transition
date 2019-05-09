@@ -2,9 +2,9 @@
 
 Declarative React transitions using [GSAP](https://greensock.com/gsap).
 
-✔ Declarative API  
-✔ Smart interpolation of transitions  
-✔ The performance you would expect from [GSAP](https://greensock.com/gsap)
+✓ Declarative API  
+✓ Smart interpolation of transitions  
+✓ The performance you would expect from [GSAP](https://greensock.com/gsap)
 
 ## Motivation
 
